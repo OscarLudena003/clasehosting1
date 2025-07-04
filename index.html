@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tecnología Educativa - Educación Superior</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f6f8;
+      color: #333;
+    }
+    header {
+      background: #0066cc;
+      padding: 1rem;
+      color: white;
+      text-align: center;
+    }
+    nav {
+      background: #003d80;
+      display: flex;
+      justify-content: center;
+    }
+    nav a {
+      color: white;
+      padding: 1rem;
+      text-decoration: none;
+      display: block;
+    }
+    nav a:hover {
+      background: #0055aa;
+    }
+    main {
+      padding: 2rem;
+    }
+    footer {
+      background: #003366;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+    section {
+      display: none;
+    }
+    section.active {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Tecnología Educativa en la Educación Superior</h1>
+  </header>
+
+  <nav>
+    <a href="#" onclick="mostrar('inicio')">Inicio</a>
+    <a href="#" onclick="mostrar('autor')">Sobre el Autor</a>
+    <a href="#" onclick="mostrar('soc_contemporanea')">Sociedad Contemporánea</a>
+    <a href="#" onclick="mostrar('soc_informacion')">Sociedad de la Información</a>
+    <a href="#" onclick="mostrar('soc_conocimiento')">Sociedad del Conocimiento</a>
+  </nav>
+
+  <main>
+    <section id="inicio" class="active">
+      <h2>Inicio</h2>
+      <p>La tecnología educativa en la educación superior impulsa nuevas formas de enseñanza, basadas en recursos digitales, plataformas interactivas y metodologías innovadoras que favorecen el aprendizaje autónomo, colaborativo y significativo.</p>
+    </section>
+
+    <section id="autor">
+      <h2>Sobre el Autor</h2>
+      <p>Oscar Ludeña es estudiante de la Universidad Técnica de Machala (UTMACH), apasionado por la integración de herramientas digitales en el proceso de enseñanza-aprendizaje. Su interés se centra en cómo la tecnología puede enriquecer la experiencia educativa.</p>
+    </section>
+
+    <section id="soc_contemporanea">
+      <h2>Sociedad Contemporánea</h2>
+      <p>La sociedad contemporánea se caracteriza por su dinamismo, globalización, avances científicos, tecnológicos y cambios culturales que exigen una educación adaptativa, crítica y comprometida con el desarrollo humano y sostenible.</p>
+    </section>
+
+    <section id="soc_informacion">
+      <h2>Sociedad de la Información</h2>
+      <p>Vivimos en una era donde la información es poder. La sociedad de la información se basa en el acceso, procesamiento y difusión de grandes volúmenes de datos, lo que demanda competencias digitales y pensamiento crítico en el ámbito educativo.</p>
+    </section>
+
+    <section id="soc_conocimiento">
+      <h2>Sociedad del Conocimiento</h2>
+      <p>La sociedad del conocimiento transforma la información en saber. En este contexto, la educación superior debe fomentar la investigación, la innovación y la producción de conocimientos que respondan a los desafíos sociales y tecnológicos actuales.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Oscar Ludeña - UTMACH | <span id="fechaHora"></span></p>
+  </footer>
+
+  <script>
+    function mostrar(seccionId) {
+      const secciones = document.querySelectorAll('section');
+      secciones.forEach(sec => sec.classList.remove('active'));
+      document.getElementById(seccionId).classList.add('active');
+    }
+
+    function actualizarFechaHora() {
+      const ahora = new Date();
+      const opciones = { year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit' };
+      document.getElementById('fechaHora').textContent = ahora.toLocaleDateString('es-EC', opciones);
+    }
+
+    setInterval(actualizarFechaHora, 1000);
+    actualizarFechaHora();
+  </script>
+</body>
+</html>
